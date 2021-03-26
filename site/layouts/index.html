@@ -2,35 +2,61 @@
 
 <div class="container">
     
-    {{ partial "nav" . }}
-    
-    <div class="intro">
-        <h1>{{.Params.title}}</h1>
-        <h2>{{.Params.subtitle}}</h2>
+    <div class="check-this">
+        <a href="https://www.youtube.com/watch?v=2a4l8UbytGA " class="">Check this</a>
+
     </div>
 
-    <div class="content">
-        <div class="content-image">
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-        </div>
-        <div class="content-text">
-            <h2>{{.Params.intro.heading}}</h2>
-            <p>{{.Params.intro.text}}</p>
-        </div>
+    <div class="top">
+        <h1>{{.Params.title}}</h1>
     </div>
 
     <div class="gallery">
-        {{ range .Paginator.Pages.ByPublishDate.Reverse }}
-            <div class="gallery-item">
-                <a href="{{ .RelPermalink }}">
-                    <img src="{{ .Params.image }}" alt="{{ .Title }}" />
-                    <h2>{{ .Title }}</h2>
-                    <p>{{ .Date.Format "2006" }}</p>
-                </a>
+
+        <div class="gallery-top-image">
+            <img src="{{ .Params.image }}" alt="">
+        </div>
+
+        <div class="gallery-second-images">
+            <div class="gallery-second-image-s">
+                <img src="./imgs/tauba-auberbach-4.jpg" alt="">
             </div>
-        {{ end }}
+            <div class="gallery-second-image-m">
+                <img src="./imgs/tauba-auberbach-5.jpg" alt="">
+            </div>
+        </div>
+
     </div>
 
+    <div class="about">
+        <p>
+            {{.Params.intro.text}}
+        </p>
+    </div>
+
+    <div class="contacts">
+
+        <div class="contacts-headline">
+            <h2>
+                Get in touch
+            </h2>
+        </div>
+
+        <div class="contacts-buttons">
+            <a href="https://www.instagram.com/tau_au/">   
+                <div class="contacts-button">Instagram</div>
+            </a>
+
+            <a href="https://www.artsy.net/artist/tauba-auerbach">
+                <div class="contacts-button">Artsy profile</div>
+            </a>
+
+        </div>
+
+
+
+
+    </div>
 </div>
 
 {{ end }}
